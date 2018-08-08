@@ -42,3 +42,5 @@ Custom endpoint
 	/actuator/features
 	
 ## Docker 
+
+	./mvnw install dockerfile:build
