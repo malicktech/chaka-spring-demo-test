@@ -21,3 +21,24 @@ demo
 * test
 
 	curl -i -X POST -H "Content-Type:application/json" -d "{  \"firstName\" : \"Frodo\",  \"lastName\" : \"Baggins\" }" http://localhost:8080/people
+
+## Actuator 
+
+Activated default
+	
+	/health and /info 
+
+to enable
+
+	/info
+	/actuator/metrics/metrics/jvm.gc.pause
+
+Actuator now shares the security config with the regular App security rules
+
+	localhost:8080/actuator/health
+	
+Custom endpoint 
+	
+	/actuator/features
+	
+## Docker 
