@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class HttpRequestTest {
+public class HomeControllerIntegrationTest {
 
 	@LocalServerPort
 	private int port;
@@ -22,9 +22,17 @@ public class HttpRequestTest {
 	private TestRestTemplate restTemplate;
 
 	@Test
-	public void greetingShouldReturnDefaultMessage() throws Exception {
-		assertThat(
-				this.restTemplate.getForObject("http://localhost:" + port + "/", String.class).contains("Hello World"));
+	public void runAndInvokeHome() throws Exception {
+		String url = "http://localhost:" + port + "/";
+		String body = this.restTemplate.getForObject(url, String.class);
+		assertThat(body.contains("Hello World"));
+	}
+
+	@Test
+	public void runAndInvokeSecureHome() throws Exception {
+		String url = "http://localhost:" + port + "/";
+		String body = new TestRestTemplate("employee", "employee").getForObject(url, String.class);
+		assertThat(body.contains("Hello World"));
 	}
 
 }

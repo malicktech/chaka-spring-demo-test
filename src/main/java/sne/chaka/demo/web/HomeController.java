@@ -1,14 +1,15 @@
 package sne.chaka.demo.web;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class HomeController {
 
-	@RequestMapping("/")
-	public @ResponseBody String greeting() {
+	@Secured("ROLE_EMPLOYEE")
+	@GetMapping("/")
+	public String greeting() {
 		return "Hello World";
 	}
 }
