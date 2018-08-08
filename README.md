@@ -15,3 +15,9 @@ demo
 * run the JAR file:
 
 	java -jar target/*.jar
+	
+## Spring data rest
+
+* test
+
+	curl -i -X POST -H "Content-Type:application/json" -d "{  \"firstName\" : \"Frodo\",  \"lastName\" : \"Baggins\" }" http://localhost:8080/people
