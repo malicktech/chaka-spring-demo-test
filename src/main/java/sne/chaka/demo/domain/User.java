@@ -32,9 +32,10 @@ public class User implements Serializable {
 
 	private LocalDate birthdate;
 
-	public User(String firstName, String lastName) {
+	public User(String firstName, String lastName, LocalDate birthdate) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.birthdate = birthdate;
 	}
 
 }

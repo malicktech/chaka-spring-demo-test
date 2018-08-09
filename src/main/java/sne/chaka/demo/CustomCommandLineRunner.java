@@ -1,6 +1,7 @@
 package sne.chaka.demo;
 
-import java.util.Arrays;
+import java.time.LocalDate;
+import java.time.Month;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -32,11 +33,11 @@ public class CustomCommandLineRunner implements CommandLineRunner {
 		// Test Spring data japa
 
 		// save a couple of customers
-		userRepository.save(new User("Jack", "Bauer"));
-		userRepository.save(new User("Chloe", "O'Brian"));
-		userRepository.save(new User("Kim", "Bauer"));
-		userRepository.save(new User("David", "Palmer"));
-		userRepository.save(new User("Michelle", "Dessler"));
+		userRepository.save(new User("Jack", "Bauer", LocalDate.of(2000, Month.JANUARY, 1)));
+		userRepository.save(new User("Chloe", "O'Brian", LocalDate.of(2002, Month.JANUARY, 1)));
+		userRepository.save(new User("Kim", "Bauer", LocalDate.of(2003, Month.JANUARY, 1)));
+		userRepository.save(new User("David", "Palmer", LocalDate.of(2005, Month.JANUARY, 1)));
+		userRepository.save(new User("Michelle", "Dessler", LocalDate.of(2010, Month.JANUARY, 1)));
 
 		// fetch all customers
 		log.info("User found with findAll():");
