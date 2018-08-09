@@ -3,6 +3,8 @@ package sne.chaka.demo;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Optional;
 
 import org.junit.Test;
@@ -24,7 +26,7 @@ public class UserRepositoryTest {
 	@Test
 	public void findByLastName() throws Exception {
 		// given
-		User savedUser = userRepository.save(new User("Stephan", "Nicolle"));
+		User savedUser = userRepository.save(new User("Stephan", "Nicolle", LocalDate.of(2000, Month.JANUARY, 1)));
 		
 		// when 
 		Optional<User> retrievedUser = userRepository.findById(1L);
