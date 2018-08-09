@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 
 import sne.chaka.demo.config.HelloProperties;
@@ -15,7 +16,7 @@ import sne.chaka.demo.domain.repository.UserRepository;
 
 @EnableConfigurationProperties(HelloProperties.class)
 @SpringBootApplication
-public class DemoApplication {
+public class DemoApplication extends SpringBootServletInitializer {
 
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
