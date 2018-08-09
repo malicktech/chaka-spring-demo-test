@@ -1,0 +1,35 @@
+logging:
+    level:
+        ROOT: INFO
+
+server:
+    port: 8080
+
+spring:
+    profiles:
+        active: dev
+        include: 
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: false
+    output:
+      ansi:
+        enabled: always
+        
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:h2:mem:demoapp;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        username: demoapp  
+        password:
+    # H2 Web Console 
+    h2:
+        console:
+            enabled: true
+            path: /h2-console
+    # JPA
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: H2
+        show-sql: true
