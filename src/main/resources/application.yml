@@ -7,7 +7,7 @@
 management:
     endpoints:
         web:
-            base-path: /management
+            base-path: /actuator
             exposure:
                 include: ["configprops", "env", "health", "info", "threaddump", "metrics"]
     endpoint:

@@ -1,0 +1,37 @@
+logging:
+    level:
+        ROOT: INFO
+
+server:
+    port: 8080
+
+spring:
+    profiles:
+        active: prod
+        include: 
+    devtools:
+        restart:
+            enabled: false
+        livereload:
+            enabled: false
+    output:
+      ansi:
+        enabled: always
+        
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root  
+        password:
+    # JPA
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        database: MYSQL
+        show-sql: false
+        hibernate:
+          ddl-auto: create
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false

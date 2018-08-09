@@ -44,3 +44,39 @@ Custom endpoint
 ## Docker 
 
 	./mvnw install dockerfile:build
+	
+to lauch a service with docker , e.g : gateway
+
+	./mvnw package -DskipTests=true dockerfile:build && docker tag marketcatalog:latest
+	
+run
+
+	docker run -p 8080:8080 -e "SPRING_PROFILES_ACTIVE=dev" snecommerce/demo
+	
+push docker hub
+docker login
+	
+	(snecommerce / aqwzsx123)
+		
+docker push
+
+	./mvnw dockerfile:push
+	
+# Docker compose
+
+docker-compose -f docker/mysql.yml up -d
+docker-compose -f docker/mysql.yml down
+
+	
+## h2 localhost
+localhost:8080/h2-console
+
+# profile prod
+
+* run the application
+
+	./mvnw spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=prod"
+	
+
+	./mvnw spring-boot:run -Dsprng-boot.run.profiles=prod
+	
